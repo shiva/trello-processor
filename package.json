@@ -1,0 +1,30 @@
+{
+  "name": "trelp",
+  "version": "0.0.1",
+  "description": "Search for listings in cards in trello JSON and output well-formatted text",
+  "private": true,
+  "bin": {
+    "trelp": "./bin/trelp"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "author": {
+    "name": "Shiva",
+    "email": "shiv@shiv.me",
+    "url": "https://github.com/shiva"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shiva/fun"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/shiva/fun/issues",
+  "dependencies": {
+    "commander": "~2.0.0",
+    "autocmdr": "~0.0.4"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4"
+  }
+}
