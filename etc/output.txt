@@ -1,52 +1,42 @@
+hello:  Send to ivica
 hello:  To Do
-hello:  rejected
+hello:  Rejected
 hello:  Doing
 hello:  Done
-hello:  Send to ivica
-1. # 1404 4178 DAWSON ST - Brentwood Living - Jeff Poh
-http://brentwoodliving.ca/V1117379-1404-4178-dawson-st.html
+hello:  Sent to ivica
+1. 1006-6838 Station Hill Drive, Burnaby, BC, V3N 5A4
+http://www.rew.ca/properties/V1119302/1006-6838-station-hill-drive-burnaby?direction=desc&sort=latest&page=1&property_search=320755347
 
-2. # 1101 4353 HALIFAX ST - Brentwood Living - Jeff Poh
-http://brentwoodliving.ca/V1086886-1101-4353-halifax-st.html
+2. 102-2736 Victoria Drive, Vancouver, BC, V5N 4L4
+http://www.rew.ca/properties/V1119263/102-2736-victoria-drive-vancouver?property_search=320755379
 
-3. Metrotown #502-4165-maywood-street
-http://www.rew.ca/properties/V1110264/502-4165-maywood-street-burnaby?property_search=320683144
+3. 408-5288 Melbourne Street, Vancouver, BC, V5R 6E6
+http://www.rew.ca/properties/V1111999/408-5288-melbourne-street-vancouver?property_search=320755379
 
-4. # 905 4353 HALIFAX ST - Brentwood Living - Jeff Poh
-http://brentwoodliving.ca/V1107808-905-4353-halifax-st.html
+4. 36-7128 Stride Avenue, Burnaby, BC, V3N 1T5
+http://www.rew.ca/properties/V1116273/36-7128-stride-avenue-burnaby?property_search=320755347
 
-5. # 806-4350 BERESFORD ST--MLS®-V1116576 for Sale | RE/MAX Mobile
-http://www.remax.ca/bc/burnaby-real-estate/na---806-4350-beresford-st-na-wp_id114706812-lst
+5. 705-2041 Bellwood Avenue, Burnaby, BC, V5B 4V5
+http://www.rew.ca/properties/V1119998/705-2041-bellwood-avenue-burnaby?property_search=320755347
 
-6. # 2603-2289 YUKON CR--MLS®-V1105790 for Sale | RE/MAX Mobile
-http://www.remax.ca/bc/burnaby-real-estate/na---2603-2289-yukon-cr-na-wp_id111894087-lst
+6. 415 2088 beta ave,  burnaby
+http://www.rew.ca/properties/V1119290/415-2088-beta-avenue-burnaby?utm_campaign=propertyalert&utm_medium=email&utm_source=propertyalert
 
-7. 2-4 PM 1208-892 Carnarvon Street, New Westminster, BC
-http://www.rew.ca/properties/V1115042/1208-892-carnarvon-street-new-westminster
+7. 303-5565 Barker Avenue, Burnaby, BC, V5H 2N8
+http://www.rew.ca/properties/V1118444/303-5565-barker-avenue-burnaby?direction=desc&sort=latest&page=1&property_search=320755347
 
-8. 3-4:30PM 417-12 K De K Court Court, New Westminster
-http://www.rew.ca/properties/V1115335/417-12-k-de-k-court-court-new-westminster
+8. 1407-833 Agnes Street, New Westminster, BC, V3M 0B1
+http://www.rew.ca/properties/V1117121/1407-833-agnes-street-new-westminster
 
-9. Metrotown # 602 6282 KATHLEEN AV, Burnaby, British Columbia For Sale — Point2 Homes Canada
-http://www.point2homes.com/CA/Home-For-Sale/BC/Burnaby/Metrotown-Central-Park/-602-6282-KATHLEEN-AV/6802280.html
+9. 405-1510 West 1st Avenue, Vancouver
+http://www.rew.ca/properties/V1120464/405-1510-west-1st-avenue-vancouver?utm_campaign=propertyalert&utm_medium=email&utm_source=propertyalert
 
-10. 2-4pm Edmonds # 206 6742 STATION HILL CT, Burnaby, British Columbia For Sale — Point2 Homes Canada
-http://www.point2homes.com/CA/Home-For-Sale/BC/Burnaby/South-Slope/-206-6742-STATION-HILL-CT/51848886.html
+10. 215-237 East 4th Avenue, Vancouver
+http://www.rew.ca/properties/V1120102/215-237-east-4th-avenue-vancouver?lat=49.2569777&lng=-123.123904
 
-11. 1707-5380 Oben Street, Vancouver
-http://m.uchidarealestate.com/listings/view/24088/vancouver-east/collingwood-vancouver-east/1707-5380-oben-street-vancouver
+11. 1403-7225 Acorn Avenue, Burnaby
+http://www.rew.ca/properties/V1120474/1403-7225-acorn-avenue-burnaby?utm_campaign=propertyalert&utm_medium=email&utm_source=propertyalert
 
-12. 1202-5380-oben-street
-http://www.rew.ca/properties/V1119018/1202-5380-oben-street-vancouver?utm_campaign=propertyalert&utm_medium=email&utm_source=propertyalert
-
-13. 2-4pm Edmonds 56-7488 Southwynde Ave.
-2-4pm 
-
-http://www.rew.ca/properties/V1116584/56-7488-southwynde-avenue-burnaby?lat=49.266667&lng=-122.96666700000003&maxPrice=450000&minBedrooms=2&minSquareFeet=750&minYear=2000&nelat=null&nelng=null&onlyOpenHouses=true&query=Burnaby%2C%20BC%2C%20Canada&swlat=null&swlng=null&zoom=14
-
-14. # 423 6707 SOUTHPOINT DR, Burnaby, British Columbia For Sale — Point2 Homes Canada
-http://www.point2homes.com/CA/Home-For-Sale/BC/Burnaby/South-Slope/-423-6707-SOUTHPOINT-DR/6822395.html
-
-15. 1-4pm Granville Island # 205 1530 MARINER WK, Vancouver, British Columbia For Sale — Point2 Homes Canada
-http://www.point2homes.com/CA/Home-For-Sale/BC/Vancouver/Fairview/-205-1530-MARINER-WK/51845234.html
+12. # 39 5810 HASTINGS ST, Burnaby, British Columbia For Sale — Point2 Homes Canada
+http://www.point2homes.com/CA/Home-For-Sale/BC/Burnaby/Parkcrest/-39-5810-HASTINGS-ST/50155506.html
 

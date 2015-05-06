@@ -7,12 +7,10 @@ var fs = require('fs');
 var file = __dirname + '/../etc/kgNOzO2Y.json';
 
 function replacer(key, value) {
-    //console.log("key= ", key);
     if (!key) {
         return value;
     }
 
-    //if (["id", "desc", "idList", "name"].indexOf(key) <= -1) {
     if (["desc", "name"].indexOf(key) <= -1) {
         return undefined;
     }
@@ -23,8 +21,6 @@ function getListByName(lists, name) {
     var ret;
 
     lists.forEach(function(list) {
-        console.log("hello: ", list.name);
-
         if (list.name === name) {
             ret = list;
         }
@@ -32,43 +28,56 @@ function getListByName(lists, name) {
     return ret;
 }
 
+function printListing(listing) {
+    console.log("%d. %s", listing.id, listing.address);
+    console.log(listing.url);
+    console.log("");
+}
+
+function removeCR(s) {
+   return s.replace(/\n$/, '')
+}
+
 module.exports = function(program) {
 
 	program
-		.command('export-cards')
+		.command('export-cards <listname>')
 		.version('0.0.1')
 		.description('export-cards from trello json file')
-		.action(function(/* Args here */){
+		.action(function(listname){
 
+            if (program.input) {
+                file = program.input;
+            }
+            
             fs.readFile(file, 'utf8', function (err, data) {
               if (err) {
                   console.log('Error: ' + err);
                   return;
-                }
+              }
             
               data = JSON.parse(data);
 
               // filter and print
-              var doingList = getListByName(data['lists'], "Doing");
+              var doingList = getListByName(data['lists'], listname);
               //console.log("List: ", doingList);
               //console.log("Cards in Doing: ", JSON.stringify(data['cards'], null, 2));
               //console.log("Cards in Doing: " );
               var i = 1;
               data['cards'].forEach(function(card) {
-                  if (card.idList === doingList.id) {
+                  // for active cards in list, create listing object, and print
+                  if ((!card.closed) && (card.idList === doingList.id)) {
                       //console.log(JSON.stringify(card, replacer, 2));
                       var listing = {};
+                      listing.id = i;
                       listing.url = card.desc;
-                      listing.address = card.name;
+                      listing.address = removeCR(card.name);
 
-                      console.log("%d. %s", i, listing.address.replace(/\n$/, ''));
-                      console.log(listing.url);
-                      console.log("");
+                      printListing(listing);
+                      
                       i++;
-
                   }
               });
             });
 		});
-	
 };
