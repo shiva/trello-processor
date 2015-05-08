@@ -60,14 +60,11 @@ module.exports = function(program) {
 
               // filter and print
               var doingList = getListByName(data['lists'], listname);
-              //console.log("List: ", doingList);
-              //console.log("Cards in Doing: ", JSON.stringify(data['cards'], null, 2));
-              //console.log("Cards in Doing: " );
+
               var i = 1;
               data['cards'].forEach(function(card) {
                   // for active cards in list, create listing object, and print
                   if ((!card.closed) && (card.idList === doingList.id)) {
-                      //console.log(JSON.stringify(card, replacer, 2));
                       var listing = {};
                       listing.id = i;
                       listing.url = card.desc;
