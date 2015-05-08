@@ -11,13 +11,13 @@ function replacer(key, value) {
         return value;
     }
 
-    if (["desc", "name"].indexOf(key) <= -1) {
+    if (['desc', 'name'].indexOf(key) <= -1) {
         return undefined;
     }
     return value;
 }
 
-function getListByName(lists, name) {
+function getListByName1(lists, name) {
     var ret;
 
     lists.forEach(function(list) {
@@ -29,13 +29,13 @@ function getListByName(lists, name) {
 }
 
 function printListing(listing) {
-    console.log("%d. %s", listing.id, listing.address);
+    console.log('%d. %s', listing.id, listing.address);
     console.log(listing.url);
-    console.log("");
+    console.log('');
 }
 
 function removeCR(s) {
-   return s.replace(/\n$/, '')
+   return s.replace(/\n$/, '');
 }
 
 module.exports = function(program) {
@@ -59,10 +59,14 @@ module.exports = function(program) {
               data = JSON.parse(data);
 
               // filter and print
-              var doingList = getListByName(data['lists'], listname);
+              var doingList = getListByName1(data.lists, listname);
+              if (!doingList) {
+                  console.error('Cannot find list : ', listname);
+                  process.exit(1);
+              }
 
               var i = 1;
-              data['cards'].forEach(function(card) {
+              data.cards.forEach(function(card) {
                   // for active cards in list, create listing object, and print
                   if ((!card.closed) && (card.idList === doingList.id)) {
                       var listing = {};
