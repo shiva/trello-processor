@@ -1,6 +1,8 @@
 trelp
 =============
 
+[![Code Climate](https://codeclimate.com/github/shiva/fun/badges/gpa.svg)](https://codeclimate.com/github/shiva/fun)
+
 # Description
 
 Search for listings in cards in trello JSON and output well-formatted text
