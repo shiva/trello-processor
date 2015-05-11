@@ -1,7 +1,8 @@
 trelp
 =============
 
-[![Code Climate](https://codeclimate.com/github/shiva/fun/badges/gpa.svg)](https://codeclimate.com/github/shiva/fun)
+[![Code Climate](https://codeclimate.com/github/shiva/trello-processor/badges/gpa.svg)](https://codeclimate.com/github/shiva/trello-processor)
+[![Build Status](https://travis-ci.org/shiva/trello-processor.svg?branch=master)](https://travis-ci.org/shiva/trello-processor)
 
 # Description
 
