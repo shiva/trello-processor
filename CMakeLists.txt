@@ -5,8 +5,8 @@ add_custom_target(
     trelp-test ALL
     npm install
     COMMAND npm test
-    COMMAND npm install -g istanbul
-    COMMAND istanbul cover bin/trelp
+    #COMMAND npm install -g istanbul
+    #COMMAND istanbul cover bin/trelp
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
     )
 
