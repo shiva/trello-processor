@@ -42,5 +42,28 @@ describe('trelp bin', function(){
 			done();
 		});
 	});
+});
 
+describe('export-cards', function() {
+	var cmd = 'node '+path.join(__dirname, '../bin/trelp')+' ';
+	console.log(cmd);
+	
+	before(function () {
+		exec('mkdir tmp');
+		exec(cmd+' --input etc/test1.json export-cards "Doing" > tmp/output.txt');
+	});
+    it('should match expected output for test1.json', function(done) {
+		
+		exec('diff etc/test1.expected tmp/output.txt', 
+			function (error, stdout, stderr) {
+				assert(error);
+				assert.equal(error.code,1);
+				done();
+			});
+    });
+	
+	after(function () {
+		exec('rm -rf tmp/');
+	});
+	
 });

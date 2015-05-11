@@ -6,18 +6,7 @@
 var fs = require('fs');
 var file = __dirname + '/../etc/kgNOzO2Y.json';
 
-function replacer(key, value) {
-    if (!key) {
-        return value;
-    }
-
-    if (['desc', 'name'].indexOf(key) <= -1) {
-        return undefined;
-    }
-    return value;
-}
-
-function getListByName1(lists, name) {
+function searchForListByName(lists, name) {
     var ret;
 
     lists.forEach(function(list) {
@@ -59,7 +48,7 @@ module.exports = function(program) {
               data = JSON.parse(data);
 
               // filter and print
-              var doingList = getListByName1(data.lists, listname);
+              var doingList = searchForListByName(data.lists, listname);
               if (!doingList) {
                   console.error('Cannot find list : ', listname);
                   process.exit(1);
