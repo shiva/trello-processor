@@ -14,5 +14,10 @@ notifications:
 addons:
   code_climate:
     repo_token: 1a2428cf13cb811e4e49d2c040f056da1e7480ae3e04e88a3d620b4eb85969ef
+  before_script:
+    - npm install -g istanbul
+    - npm install -g mocha
+    - npm install -g codeclimate-test-reporter
   after_script:
-  - codeclimate < lcov.info
+    - istanbul cover _mocha -- -R spec ./test/*.js
+    - codeclimate < lcov.info

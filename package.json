@@ -7,8 +7,7 @@
     "trelp": "./bin/trelp"
   },
   "scripts": {
-    "test": "mocha -R spec",
-    "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --ui bdd -R spec -t 5000"
+    "test": "istanbul test _mocha"
   },
   "author": {
     "name": "Shiva",
@@ -25,7 +24,4 @@
     "commander": "~2.0.0",
     "autocmdr": "~0.0.4"
   },
-  "devDependencies": {
-    "mocha": "^2.2.4"
-  }
 }
