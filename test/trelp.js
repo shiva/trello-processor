@@ -44,6 +44,7 @@ describe('trelp bin', function(){
 	});
 });
 
+/*
 describe('export-cards', function() {
 	var cmd = 'node '+path.join(__dirname, '../bin/trelp')+' ';
 	console.log(cmd);
@@ -52,6 +53,7 @@ describe('export-cards', function() {
 		exec('mkdir tmp');
 		exec(cmd+' --input etc/test1.json export-cards "Doing" > tmp/output.txt');
 	});
+
     it('should match expected output for test1.json', function(done) {
 		
 		exec('diff etc/test1.expected tmp/output.txt', 
@@ -67,3 +69,4 @@ describe('export-cards', function() {
 	});
 	
 });
+*/
