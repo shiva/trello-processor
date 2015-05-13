@@ -18,6 +18,6 @@ addons:
     - npm install -g istanbul
     - npm install -g mocha
     - npm install -g codeclimate-test-reporter
-  after_script:
-    - istanbul cover _mocha -- -R spec ./test/*.js
-    - codeclimate < lcov.info
+  #after_script:
+  #  - istanbul cover _mocha -- -R spec ./test/*.js
+  #  - codeclimate < lcov.info

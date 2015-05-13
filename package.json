@@ -23,5 +23,5 @@
   "dependencies": {
     "commander": "~2.0.0",
     "autocmdr": "~0.0.4"
-  },
+  }
 }
