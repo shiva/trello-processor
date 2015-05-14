@@ -11,15 +11,17 @@ notifications:
     on_start: false     # default: false
   slack:
     secure: YBM25pGiXfs9lJQMb5E8IiO5HiY9h0XjW+bwxQd+KPSswTkGeYwzVesi8tZ2Luw6jW0ApgIqiy0p7RHy1aLcwykHyAYrFZB5NKo0YI2psTRoZX5l+AjHkpTf7v2YIJAusrZIPf+Pn68RV8/LNDwAQ3VXns1IDfMB+H71SYi5d36eEKjVdit9DHSCtMDP+ipEf/KpeRD9aiO2ny+W9dfhEa23bOclNxQzCoJ8mOqtW2FtZfL52Folm+qDLEYtR5qjTCXXCURo51S1nhRUKxkFRwpLGpPVNjatbnISk6ZnBmjlVjJ7HvxAZ6EcwzK8QGUcI02GXNOzkqmqZmmxcI8w1f6k7Rq4tMFq7rF8mCJs6s53v5g+SEdscKKJRCxsGbtuMwRjlet6rIjQgQJFczFyQSZGVbg73e2id86fc1S5RiH15CHMRAJLiReG7tbXAkeuB4NZeu41POhdA/EFYaJFGJaQ/u+WcI0LoK6oY8yFcgMVhuopL58Mpz6Q+w1Wrow7FBu1bHZX74w2qcXh0Cw6M8iNRhY/7HjmK21Y0FqEZWL6mqVaJ+qPpCurG/j6EfnpNF/R3WZEfX7GDaRqqj/j3qSXrozUctPnm9WWtP9j930V21wwy0oHo3mp4hJrwD4I2f3y1UDch2Edt0wcKMbxsZDazRpgI4gCsgUZp03D/ZM=
+
 addons:
   code_climate:
     repo_token: 1a2428cf13cb811e4e49d2c040f056da1e7480ae3e04e88a3d620b4eb85969ef
-  before_script:
-    - npm install -g istanbul
-    - npm install -g codeclimate-test-reporter
-  after_script:
-    - npm run-script coverage
-    - codeclimate < coverage/lcov.info
-    - coveralls
-  script:
-    - npm run-script coverage
+
+before_script:
+  - npm install -g istanbul
+  - npm install -g codeclimate-test-reporter
+script:
+  - npm run-script coverage
+after_script:
+  - npm run-script coverage
+  - codeclimate < coverage/lcov.info
+  - coveralls
