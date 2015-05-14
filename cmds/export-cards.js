@@ -7,6 +7,12 @@ var fs = require('fs');
 var file = __dirname + '/../etc/kgNOzO2Y.json';
 var helpers = require('../lib/helpers.js');
 
+var printListing = function (listing) {
+    console.log('%d. %s', listing.id, listing.address);
+    console.log(listing.url);
+    console.log('');
+};
+
 module.exports = function(program) {
 
 	program
@@ -43,7 +49,7 @@ module.exports = function(program) {
                       listing.url = card.desc;
                       listing.address = helpers.removeCR(card.name);
 
-                      helpers.printListing(listing);
+                      printListing(listing);
                       
                       i++;
                   }
