@@ -7,7 +7,8 @@
     "trelp": "./bin/trelp"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage" : "istanbul cover _mocha -- -u exports -R spec"
   },
   "author": {
     "name": "Shiva",
@@ -25,14 +26,8 @@
     "autocmdr": "~0.0.4"
   },
   "devDependencies": {
-    "blanket": "^1.1.7",
     "coveralls": "^2.11.2",
     "mocha": "^2.2.4",
     "mocha-lcov-reporter": "0.0.2"
-  },
-  "config": {
-    "blanket": {
-       "pattern": ["bin/*", "cmds/*.js"]
-    }
   }
 }

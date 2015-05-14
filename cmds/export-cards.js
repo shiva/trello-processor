@@ -5,27 +5,7 @@
 
 var fs = require('fs');
 var file = __dirname + '/../etc/kgNOzO2Y.json';
-
-function searchForListByName(lists, name) {
-    var ret;
-
-    lists.forEach(function(list) {
-        if (list.name === name) {
-            ret = list;
-        }
-    });
-    return ret;
-}
-
-function printListing(listing) {
-    console.log('%d. %s', listing.id, listing.address);
-    console.log(listing.url);
-    console.log('');
-}
-
-function removeCR(s) {
-   return s.replace(/\n$/, '');
-}
+var helpers = require('../lib/helpers.js');
 
 module.exports = function(program) {
 
@@ -33,7 +13,7 @@ module.exports = function(program) {
 		.command('export-cards <listname>')
 		.version('0.0.1')
 		.description('export-cards from trello json file')
-		.action(function(listname){
+		.action(function(listname) {
 
             if (program.input) {
                 file = program.input;
@@ -48,7 +28,7 @@ module.exports = function(program) {
               data = JSON.parse(data);
 
               // filter and print
-              var doingList = searchForListByName(data.lists, listname);
+              var doingList = helpers.searchForListByName(data.lists, listname);
               if (!doingList) {
                   console.error('Cannot find list : ', listname);
                   process.exit(1);
@@ -61,9 +41,9 @@ module.exports = function(program) {
                       var listing = {};
                       listing.id = i;
                       listing.url = card.desc;
-                      listing.address = removeCR(card.name);
+                      listing.address = helpers.removeCR(card.name);
 
-                      printListing(listing);
+                      helpers.printListing(listing);
                       
                       i++;
                   }
