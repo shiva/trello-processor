@@ -17,7 +17,7 @@ addons:
   before_script:
     - npm install -g istanbul
     - npm install -g codeclimate-test-reporter
-  after_success:
+  after_script:
     - npm run-script coverage
     - codeclimate < coverage/lcov.info
     - coveralls
