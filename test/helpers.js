@@ -22,4 +22,25 @@ describe('helpers', function(){
 		done();
 	});
 
+	it('should remove carriage returns', function(done) {
+		var actual = helpers.removeCR("abcefg\n");
+		assert(actual === "abcefg");
+		actual = helpers.removeCR("abc\nefg\n");
+		assert(actual === "abcefg");
+		actual = helpers.removeCR("\nabcefg\n");
+		assert(actual === "abcefg");
+		actual = helpers.removeCR("ab\nce\nfg\n");
+		assert(actual === "abcefg");
+		
+		var actual = helpers.removeCR("abcefg\r");
+		assert(actual === "abcefg");
+		actual = helpers.removeCR("abc\nefg\r\n");
+		assert(actual === "abcefg");
+		actual = helpers.removeCR("\nabc\refg\n");
+		assert(actual === "abcefg");
+		actual = helpers.removeCR("ab\rce\rfg\n");
+		assert(actual === "abcefg");
+		
+		done();
+	});
 });
