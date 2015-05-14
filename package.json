@@ -8,7 +8,10 @@
   },
   "scripts": {
     "test": "mocha",
-    "coverage" : "istanbul cover _mocha -- -u exports -R spec"
+    "coverage" : "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec",
+    "coveralls" : "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "codeclimate" : "codeclimate < coverage/lcov.info",
+    "clean-coverage" : "rm -rf coverage/*"
   },
   "author": {
     "name": "Shiva",

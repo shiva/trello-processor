@@ -22,5 +22,6 @@ before_script:
 script:
   - npm run-script coverage
 after_success:
-  - codeclimate < coverage/lcov.info
-  - coveralls
+  - npm run-script codeclimate
+  - npm run-script coveralls
+  - npm run-script clean-coverage
