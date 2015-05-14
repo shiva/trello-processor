@@ -8,8 +8,7 @@ require('autocmdr/lib/loader')(program);
 require('autocmdr/lib/package')(program);
 require('autocmdr/lib/help')(program);
 
-program
-	.parse(process.argv);
+program.parse(process.argv);
 
 if (program.args.length < 1 ) {
 	console.log('No command specified. See \'trelp --help\':');
@@ -17,3 +16,7 @@ if (program.args.length < 1 ) {
 	process.exit(1);
 }
 
+if (!program.input) {
+	console.log("setting default");
+	program.input = __dirname + '/../etc/kgNOzO2Y.json';
+}
