@@ -21,7 +21,6 @@ before_script:
   - npm install -g codeclimate-test-reporter
 script:
   - npm run-script coverage
-after_script:
-  - npm run-script coverage
+after_success:
   - codeclimate < coverage/lcov.info
   - coveralls
