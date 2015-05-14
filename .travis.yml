@@ -21,4 +21,5 @@ addons:
     - npm run-script coverage
     - codeclimate < coverage/lcov.info
     - coveralls
-  
+  script:
+    - npm run-script coverage
