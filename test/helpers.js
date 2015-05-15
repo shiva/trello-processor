@@ -71,4 +71,25 @@ describe('helpers', function(){
 		assert(!helpers.isCardInList(card, "001"));
 		done();
 	});
+
+	it('should parse address from url', function(done) {
+		var url = "http://www.rew.ca/properties/V1122665/206-1035-auckland-street-new-westminster?utm_campaign=propertyalert&utm_medium=email&utm_source=propertyalert";
+		var exp_address = "206-1035-auckland-street-new-westminster";
+		var address = helpers.parseAddressFromUrl(url);
+
+		assert(exp_address === address);
+		done();
+	});
+
+
+	it('should fail parsing address from url', function(done) {
+		var url = "http://www.rew.rties/V1122665/206-1035-auckland-street-new-westminster?utm_campaign=propertyalert&utm_medium=email&utm_source=propertyalert";
+		var exp_address = "206-1035-auckland-street-new-westminster";
+		var address = helpers.parseAddressFromUrl(url);
+
+		console.log(address);
+
+		assert(exp_address !== address);
+		done();
+	});
 });
