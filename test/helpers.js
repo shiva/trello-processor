@@ -52,5 +52,23 @@ describe('helpers', function(){
 		assert(listing.name === "d");
 
 		done();
-	})
+	});
+
+	it('should find card in list', function(done) {
+		var card = {};
+		card.closed = false;
+		card.idList = "001";
+
+		assert(helpers.isCardInList(card, "001"));
+		done();
+	});
+
+	it('should not find closed card', function(done) {
+		var card = {};
+		card.closed = true;
+		card.idList = "001";
+
+		assert(!helpers.isCardInList(card, "001"));
+		done();
+	});
 });
