@@ -4,7 +4,8 @@
 'use strict';
 
 var fs = require('fs');
-var helpers = require('../lib/helpers.js');
+var utils = require('../lib/utils.js');
+var helpers = require('../lib/cmd-helpers.js');
 
 module.exports = function(program) {
 
@@ -23,7 +24,7 @@ module.exports = function(program) {
             data = JSON.parse(data);
 
             // filter and print
-            var doingList = helpers.searchForListByName(data.lists, listname);
+            var doingList = utils.searchForListByName(data.lists, listname);
             if (!doingList) {
                 console.error('Cannot find list : ', listname);
                 process.exit(1);

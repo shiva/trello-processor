@@ -4,9 +4,9 @@ var assert = require("assert");
 var exec = require('child_process').exec;
 var path = require('path');
 
-var helpers = require('../lib/helpers.js');
+var utils = require('../lib/utils.js');
 
-describe('helpers', function(){
+describe('utils', function(){
 
 	it('should return list object given the name', function(done) {
 		var lists = [];
@@ -16,36 +16,36 @@ describe('helpers', function(){
 			lists.push(list);
 		}
 
-		var found = helpers.searchForListByName(lists, "list3");
+		var found = utils.searchForListByName(lists, "list3");
 		assert(found.name === "list3");
 		assert(found.value === 3);
 		done();
 	});
 
 	it('should remove carriage returns', function(done) {
-		var actual = helpers.removeCR("abcefg\n");
+		var actual = utils.removeCR("abcefg\n");
 		assert(actual === "abcefg");
-		actual = helpers.removeCR("abc\nefg\n");
+		actual = utils.removeCR("abc\nefg\n");
 		assert(actual === "abcefg");
-		actual = helpers.removeCR("\nabcefg\n");
+		actual = utils.removeCR("\nabcefg\n");
 		assert(actual === "abcefg");
-		actual = helpers.removeCR("ab\nce\nfg\n");
+		actual = utils.removeCR("ab\nce\nfg\n");
 		assert(actual === "abcefg");
 
-		var actual = helpers.removeCR("abcefg\r");
+		var actual = utils.removeCR("abcefg\r");
 		assert(actual === "abcefg");
-		actual = helpers.removeCR("abc\nefg\r\n");
+		actual = utils.removeCR("abc\nefg\r\n");
 		assert(actual === "abcefg");
-		actual = helpers.removeCR("\nabc\refg\n");
+		actual = utils.removeCR("\nabc\refg\n");
 		assert(actual === "abcefg");
-		actual = helpers.removeCR("ab\rce\rfg\n");
+		actual = utils.removeCR("ab\rce\rfg\n");
 		assert(actual === "abcefg");
 
 		done();
 	});
 
 	it('should create listing', function(done) {
-		var listing = helpers.createListing("a", "b", "c", "d");
+		var listing = utils.createListing("a", "b", "c", "d");
 		assert(listing.id === "a");
 		assert(listing.url === "b");
 		assert(listing.address === "c");
@@ -59,7 +59,7 @@ describe('helpers', function(){
 		card.closed = false;
 		card.idList = "001";
 
-		assert(helpers.isCardInList(card, "001"));
+		assert(utils.isCardInList(card, "001"));
 		done();
 	});
 
@@ -68,14 +68,14 @@ describe('helpers', function(){
 		card.closed = true;
 		card.idList = "001";
 
-		assert(!helpers.isCardInList(card, "001"));
+		assert(!utils.isCardInList(card, "001"));
 		done();
 	});
 
 	it('should parse address from url', function(done) {
 		var url = "http://www.rew.ca/properties/V1122665/206-1035-auckland-street-new-westminster?utm_campaign=propertyalert&utm_medium=email&utm_source=propertyalert";
 		var exp_address = "206-1035-auckland-street-new-westminster";
-		var address = helpers.parseAddressFromUrl(url);
+		var address = utils.parseAddressFromUrl(url);
 
 		assert(exp_address === address);
 		done();
@@ -85,9 +85,7 @@ describe('helpers', function(){
 	it('should fail parsing address from url', function(done) {
 		var url = "http://www.rew.rties/V1122665/206-1035-auckland-street-new-westminster?utm_campaign=propertyalert&utm_medium=email&utm_source=propertyalert";
 		var exp_address = "206-1035-auckland-street-new-westminster";
-		var address = helpers.parseAddressFromUrl(url);
-
-		console.log(address);
+		var address = utils.parseAddressFromUrl(url);
 
 		assert(exp_address !== address);
 		done();

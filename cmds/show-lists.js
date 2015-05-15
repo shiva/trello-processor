@@ -4,7 +4,7 @@
 'use strict';
 
 var fs = require('fs');
-var helpers = require('../lib/helpers.js');
+var utils = require('../lib/utils.js');
 
 module.exports = function(program) {
 
