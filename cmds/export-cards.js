@@ -30,20 +30,6 @@ module.exports = function(program) {
             }
 
             helpers.walkCards(data.cards, doingList.id);
-/*
-            var i = 1;
-            data.cards.forEach(function(card) {
-                // for active cards in list, create listing object, and print
-
-                if (isCardInList(card, doingList.id)) {
-                    printListing(
-                        createListing(
-                            i, card.desc, helpers.removeCR(card.name)));
-
-                    i++;
-                }
-            });
-            */
         });
     });
 };
