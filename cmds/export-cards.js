@@ -4,14 +4,7 @@
 'use strict';
 
 var fs = require('fs');
-var file = __dirname + '/../etc/kgNOzO2Y.json';
 var helpers = require('../lib/helpers.js');
-
-var printListing = function (listing) {
-    console.log('%d. %s', listing.id, listing.address);
-    console.log(listing.url);
-    console.log('');
-};
 
 module.exports = function(program) {
 
@@ -21,11 +14,7 @@ module.exports = function(program) {
     .description('export-cards from trello json file')
     .action(function(listname) {
 
-        if (program.input) {
-            file = program.input;
-        }
-
-        fs.readFile(file, 'utf8', function (err, data) {
+        fs.readFile(program.input, 'utf8', function (err, data) {
             if (err) {
                 console.log('Error: ' + err);
                 return;
@@ -40,20 +29,21 @@ module.exports = function(program) {
                 process.exit(1);
             }
 
+            helpers.walkCards(data.cards, doingList.id);
+/*
             var i = 1;
             data.cards.forEach(function(card) {
                 // for active cards in list, create listing object, and print
-                if ((!card.closed) && (card.idList === doingList.id)) {
-                    var listing = {};
-                    listing.id = i;
-                    listing.url = card.desc;
-                    listing.address = helpers.removeCR(card.name);
 
-                    printListing(listing);
+                if (isCardInList(card, doingList.id)) {
+                    printListing(
+                        createListing(
+                            i, card.desc, helpers.removeCR(card.name)));
 
                     i++;
                 }
             });
+            */
         });
     });
 };
